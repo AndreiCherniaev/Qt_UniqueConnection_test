@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(console_test1 LANGUAGES CXX) #use for ${PROJECT_NAME}
+project(UniqueConnection_test LANGUAGES CXX) #use for ${PROJECT_NAME}
 
 set(CMAKE_AUTOMOC ON)
 # set(CMAKE_AUTOUIC ON) #for GUI apps
