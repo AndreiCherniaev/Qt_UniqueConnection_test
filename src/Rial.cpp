@@ -5,10 +5,10 @@ Rial::Rial(QObject *parent) : QObject(parent)
 {
     //Old style
     //connect(timer, SIGNAL(timeout()), this, SLOT(Callback1()), static_cast<Qt::ConnectionType>(Qt::AutoConnection | Qt::SingleShotConnection | Qt::UniqueConnection));
-    //connect(timer, SIGNAL(timeout()), this, SLOT(Callback2()), static_cast<Qt::ConnectionType>(Qt::AutoConnection | Qt::SingleShotConnection | Qt::UniqueConnection));
+    //connect(timer, SIGNAL(timeout()), this, SLOT(Callback1()), static_cast<Qt::ConnectionType>(Qt::AutoConnection | Qt::SingleShotConnection | Qt::UniqueConnection)); //duplicate
     //New style
     connect(timer, &QTimer::timeout, this, &Rial::Callback1, static_cast<Qt::ConnectionType>(Qt::AutoConnection | Qt::SingleShotConnection | Qt::UniqueConnection));
-    connect(timer, &QTimer::timeout, this, &Rial::Callback2, static_cast<Qt::ConnectionType>(Qt::AutoConnection | Qt::SingleShotConnection | Qt::UniqueConnection));
+    connect(timer, &QTimer::timeout, this, &Rial::Callback1, static_cast<Qt::ConnectionType>(Qt::AutoConnection | Qt::SingleShotConnection | Qt::UniqueConnection)); //duplicate
 
     timer->start(500);
 }
